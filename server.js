@@ -64,6 +64,10 @@ app.get('/assignment', (req, res) => {
     res.render('assignment.hbs');
 });
 
+app.get('/saiem', (req, res) => {
+    res.render('saiem.hbs');
+});
+
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About page',

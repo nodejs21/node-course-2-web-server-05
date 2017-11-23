@@ -1,0 +1,104 @@
+	<!-- 
+	In the name of Allah, the most Beneficent, the most Merciful. He, Who is the sole Creator of saiem saeed. Who says Be, & it is. And He is the creator of Be. I belong & love most to Prophet Muhammad SAW after Him.
+-->
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FA15-BSE-07</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- <link rel="stylesheet" type="text/css" href="style.css"> -->
+	<style type="text/css">
+	.box {
+		background-color: lightgrey;
+		width: 40%;
+		border-radius: 20px;
+	}
+
+	input[type=email], input[type=password]
+	{
+		width: 100%;
+		height: 40px;
+		font-size: 20px;
+		border-radius: 5px;
+	}
+
+	.login
+	{
+		float: right;
+		font-size: 16px;
+	}
+
+
+	.vertical-center {	
+		min-height: 520px;	
+		height: 100vh;
+		width: 100%;
+		display: inline-flex;
+		align-items: center;
+		justify-content: center;
+	}
+</style>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() 
+	{
+		$("#email").keyup(() => {
+			var email = $("#email").val();
+			if(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email))
+			{
+				$("#password").focus();
+			}
+		});
+
+		$("#inpForm").submit(() =>
+		{
+			var email = $("#email").val();
+			var pass = $("#password").val();
+			var remail = email.split("").reverse().join("");
+			if(/\w+$/.test(pass))
+			{	
+				if(remail == pass)
+					alert("logged In");
+				else
+					alert("Credentials are not valid!");
+			}
+			else
+			{
+				alert("Password is wrong");
+			}
+		});
+	});
+</script>
+</head>
+<body>
+	<nav class="navbar navbar-inverse navbar-fixed-top">
+		<div class="container">
+			<p class="navbar-brand" >SAIEM SAEED / FA15-BSE-075</p>
+		</div>
+	</nav>	
+	<div class="container">
+		<div class="vertical-center">
+			<div class="box">
+				<div class="col-lg-12 col-sm-12">
+					<div class="col1">
+						<form id="inpForm">
+							<h3>Use a local account to log in.</h3>
+							<label>User name</label>
+							<br />
+							<input type="email" name="email" id="email" autofocus  />
+							<br />
+							<label>Password</label>
+							<br />
+							<input type="password" id="password" name="password" />
+							<br />
+							<br />
+							<button class="btn btn-md btn-primary login">Log In</button>
+							<br>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
