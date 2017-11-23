@@ -60,6 +60,10 @@ app.get('/', (req, res) => {
     });
 });
 
+app.get('/assignment', (req, res) => {
+    res.render('assignment.hbs');
+});
+
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         pageTitle: 'About page',
