@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="crossorigin="anonymous"></script>
+</head>
+<body>
+    <script>
+        $(document).ready(function () {
+            var url = "";
+            var type = "GET";
+            var contentType = "text/xml";
+            one ();two ();three ();four ();five ();six ();seven ();eight ();nine ();ten ();eleven ();twelve ();thirteen ();fourteen ();fifteenOne ();fifteenThree ();fifteenSix ();fifteenTwelve ();
+            function one () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans";
+                var prices = "";
+                $.ajax({
+                    url,
+                    type,
+                    contentType,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+                            prices[plan] = xmlDoc.ampa.plans[plan].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 1: "+error);
+                    }
+                });
+            };
+            function two () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=domains&command=info";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;">${data}`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 2: "+error);
+                    }
+                })
+            }
+            function three () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=order&command=create&plan=1&country=US&firstname=John&lastname=Smith&email=exmapleemail%40my-best-domain.com&phone=555555555&address1=XXXXXX&state=DC&city=XXXXXX&zip=1234&domains[0][type]=register&domains[0][sld]=my-best-domain&domains[0][tld]=com&domains[0][period]=1&domains[0][epp]=&domains[0][contacts]=&domains[0][extra_attributes]=&fax=&currency=USD&period=12&ip=XXX.XXX.XXX.XXX&cancel_url=http%3A%2F%2Fmy-best-domain.com%2Forder.php&return_url=http%3A%2F%2Fmy-best-domain.com%2Fthankyou%2F&payment_method=2co&signup_from=template16";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;">${data}`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 3: "+error);
+                    }
+                })
+            }
+            function four () {
+                // clear();
+                url = "https://www.2checkout.com/2co/buyer/purchase]]></redirect_url>";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;">${data}`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 4: "+error);
+                    }
+                })
+            }
+            function five () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=terms&command=get&type=duoservers_terms&domain_name_registration_agreement_url=%2Fmembers%2Flegal%2Findex.php%3Fdomain_name_registration_agreement&domain_name_dispute_resolution_policy_url=%2Fmembers%2Flegal%2Findex.php%3Fdomain_name_dispute_resolution_policy&service_level_guarantees_url=%2Fmembers%2Flegal%2Findex.php%3Fservice_level_guarantees&privacy_policy_url=%2Fmembers%2Flegal%2Findex.php%3Fprivacy_policy";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;">${data}`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 5: "+error);
+                    }
+                })
+            }
+            function six () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+                            prices[plan] = xmlDoc.ampa.plans[plan].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 6: "+error);
+                    }
+                })
+            }
+            function seven () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_domains";
+                var com, net, org, info, us, uk, coUk, eu, site, website, weBs, space, ru, es, de, it, nl, fr, be, orgUk, meUk, cn, comCn, netCn, orgCn, biz, online, fun;
+                $.ajax({
+                    url, 
+                    type,
+                    contentType,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.domains).forEach((domain) => {
+                            prices[domain] = xmlDoc.ampa.domains[domain].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 7: "+error);
+                    }
+                })
+            }
+            function eight () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_registerdomains&periods_no_collapse=1";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.registerdomains).forEach((domain) => {
+                            prices[domain] = xmlDoc.ampa.registerdomains[domain].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 8: "+error);
+                    }
+                })
+            }
+            function nine () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=domains&command=check&name=my-best-domain&tlds[0]=com&tlds[1]=net&tlds[2]=us";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;">${data}`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 9: "+error);
+                    }
+                })
+            }
+            function ten () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_upgrades";
+                $.ajax({
+                    url,
+                    type,
+                    contentType,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.upgrades).forEach((upgrade) => {
+                            prices[upgrade] = xmlDoc.ampa.upgrades[upgrade].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 10: "+error);
+                    }
+                })
+            }
+            function eleven () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_services&rp_product_id=44";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;">${data}`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 11: "+error);
+                    }
+                })
+            }
+            function twelve () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_id_protect";
+                $.ajax({
+                    url,
+                    type,
+                    contentType,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.id_protect).forEach((id) => {
+                            prices[id] = xmlDoc.ampa.id_protect[id].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 12: "+error);
+                    }
+                })
+            }
+            function thirteen () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=store_data&command=get_company";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;">${data}`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 13: "+error);
+                    }
+                })
+            }
+            function fourteen () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=validate&command=username_free&text=testusername";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;">${data}`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 14: "+error);
+                    }
+                })
+            }
+            function fifteenOne () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans&prices[0]=price&periods[0]=1&currencies[0]=USD";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+                            prices[plan] = xmlDoc.ampa.plans[plan].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 15-1: "+error);
+                    }
+                })
+            }
+            function fifteenThree () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans&prices[0]=price&periods[0]=3&currencies[0]=USD";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+                            prices[plan] = xmlDoc.ampa.plans[plan].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 15-3: "+error);
+                    }
+                })
+            }
+            function fifteenSix () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans&prices[0]=price&periods[0]=6&currencies[0]=USD";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+                            prices[plan] = xmlDoc.ampa.plans[plan].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 15-6: "+error);
+                    }
+                })
+            }
+            function fifteenTwelve () {
+                // clear();
+                url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans&prices[0]=price&periods[0]=12&currencies[0]=USD";
+                $.ajax({
+                    url,
+                    type,
+                    success: function(data) {
+                        let doc = new DOMParser().parseFromString(data, contentType);
+                        var xmlDoc = xmlToJson(doc);
+                        var prices = {};
+                        Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+                            prices[plan] = xmlDoc.ampa.plans[plan].prices;
+                        });
+                        $("#text").append(`<hr size ="20" style="color: red; background-color:red;"><pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+                    },
+                    error: function(error) {
+                        console.log("Error from 15-12: "+error);
+                    }
+                })
+            }
+            // $("#1").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans";
+            //     var prices = "";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         contentType,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+            //                 prices[plan] = xmlDoc.ampa.plans[plan].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 1: "+error);
+            //         }
+            //     });
+            // });
+            // // Empty Link
+            // $("#2").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=domains&command=info";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             $("#text").append(`${data}`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 2: "+error);
+            //         }
+            //     })
+            // });
+            // Empty Link
+            // $("#3").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=order&command=create&plan=1&country=US&firstname=John&lastname=Smith&email=exmapleemail%40my-best-domain.com&phone=555555555&address1=XXXXXX&state=DC&city=XXXXXX&zip=1234&domains[0][type]=register&domains[0][sld]=my-best-domain&domains[0][tld]=com&domains[0][period]=1&domains[0][epp]=&domains[0][contacts]=&domains[0][extra_attributes]=&fax=&currency=USD&period=12&ip=XXX.XXX.XXX.XXX&cancel_url=http%3A%2F%2Fmy-best-domain.com%2Forder.php&return_url=http%3A%2F%2Fmy-best-domain.com%2Fthankyou%2F&payment_method=2co&signup_from=template16";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             $("#text").append(`${data}`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 3: "+error);
+            //         }
+            //     })
+            // });
+            // // Empty Link
+            // $("#4").click(() => {
+            //     clear();
+            //     url = "https://www.2checkout.com/2co/buyer/purchase]]></redirect_url>";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             $("#text").append(`${data}`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 4: "+error);
+            //         }
+            //     })
+            // });
+            // // Empty Link
+            // $("#5").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=terms&command=get&type=duoservers_terms&domain_name_registration_agreement_url=%2Fmembers%2Flegal%2Findex.php%3Fdomain_name_registration_agreement&domain_name_dispute_resolution_policy_url=%2Fmembers%2Flegal%2Findex.php%3Fdomain_name_dispute_resolution_policy&service_level_guarantees_url=%2Fmembers%2Flegal%2Findex.php%3Fservice_level_guarantees&privacy_policy_url=%2Fmembers%2Flegal%2Findex.php%3Fprivacy_policy";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             $("#text").append(`${data}`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 5: "+error);
+            //         }
+            //     })
+            // });
+            // $("#6").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+            //                 prices[plan] = xmlDoc.ampa.plans[plan].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 6: "+error);
+            //         }
+            //     })
+            // });
+            // $("#7").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_domains";
+            //     var com, net, org, info, us, uk, coUk, eu, site, website, weBs, space, ru, es, de, it, nl, fr, be, orgUk, meUk, cn, comCn, netCn, orgCn, biz, online, fun;
+            //     $.ajax({
+            //         url, 
+            //         type,
+            //         contentType,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.domains).forEach((domain) => {
+            //                 prices[domain] = xmlDoc.ampa.domains[domain].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 7: "+error);
+            //         }
+            //     })
+            // });
+            // $("#8").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_registerdomains&periods_no_collapse=1";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.registerdomains).forEach((domain) => {
+            //                 prices[domain] = xmlDoc.ampa.registerdomains[domain].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 8: "+error);
+            //         }
+            //     })
+            // });
+            // // Empty Link
+            // $("#9").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=domains&command=check&name=my-best-domain&tlds[0]=com&tlds[1]=net&tlds[2]=us";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             $("#text").append(`${data}`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 9: "+error);
+            //         }
+            //     })
+            // });
+            // $("#10").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_upgrades";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         contentType,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.upgrades).forEach((upgrade) => {
+            //                 prices[upgrade] = xmlDoc.ampa.upgrades[upgrade].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 10: "+error);
+            //         }
+            //     })
+            // });
+            // // Empty Link
+            // $("#11").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_services&rp_product_id=44";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             $("#text").append(`${data}`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 11: "+error);
+            //         }
+            //     })
+            // });
+            // $("#12").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_id_protect";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         contentType,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.id_protect).forEach((id) => {
+            //                 prices[id] = xmlDoc.ampa.id_protect[id].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 12: "+error);
+            //         }
+            //     })
+            // });
+            // // Empty Link
+            // $("#13").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=store_data&command=get_company";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             $("#text").append(`${data}`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 13: "+error);
+            //         }
+            //     })
+            // });
+            // // Empty Link
+            // $("#14").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=validate&command=username_free&text=testusername";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             $("#text").append(`${data}`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 14: "+error);
+            //         }
+            //     })
+            // });
+            // $("#15-1").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans&prices[0]=price&periods[0]=1&currencies[0]=USD";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+            //                 prices[plan] = xmlDoc.ampa.plans[plan].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 15-1: "+error);
+            //         }
+            //     })
+            // });
+            // $("#15-3").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans&prices[0]=price&periods[0]=3&currencies[0]=USD";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+            //                 prices[plan] = xmlDoc.ampa.plans[plan].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 15-3: "+error);
+            //         }
+            //     })
+            // });
+            // $("#15-6").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans&prices[0]=price&periods[0]=6&currencies[0]=USD";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+            //                 prices[plan] = xmlDoc.ampa.plans[plan].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 15-6: "+error);
+            //         }
+            //     })
+            // });
+            // $("#15-12").click(() => {
+            //     clear();
+            //     url = "https://api.duoservers.com/?auth_username=store192882&auth_password=test123456&section=products&command=get_plans&prices[0]=price&periods[0]=12&currencies[0]=USD";
+            //     $.ajax({
+            //         url,
+            //         type,
+            //         success: function(data) {
+            //             let doc = new DOMParser().parseFromString(data, contentType);
+            //             var xmlDoc = xmlToJson(doc);
+            //             var prices = {};
+            //             Object.keys(xmlDoc.ampa.plans).forEach((plan) => {
+            //                 prices[plan] = xmlDoc.ampa.plans[plan].prices;
+            //             });
+            //             $("#text").append(`<pre>${JSON.stringify(prices, undefined, 2)}</pre>`);
+            //         },
+            //         error: function(error) {
+            //             console.log("Error from 15-12: "+error);
+            //         }
+            //     })
+            // });
+            function clear() {
+                $("#text").text("");
+            }
+            function xmlToJson(xml) {
+                // Create the return object
+                var obj = {};
+                
+                if (xml.nodeType == 1) { // element
+                    // do attributes
+                    if (xml.attributes.length > 0) {
+                        obj["@attributes"] = {};
+                        for (var j = 0; j < xml.attributes.length; j++) {
+                            var attribute = xml.attributes.item(j);
+                            obj["@attributes"][attribute.nodeName] = attribute.nodeValue;
+                        }
+                    }
+                } else if (xml.nodeType == 3) { // text
+                    obj = xml.nodeValue;
+                }
+                // do children
+                if (xml.hasChildNodes) {
+                    for(var i = 0; i < xml.childNodes.length; i++) {
+                        var item = xml.childNodes.item(i);
+                        var nodeName = item.nodeName;
+                        if (typeof(obj[nodeName]) == "undefined") {
+                            obj[nodeName] = xmlToJson(item);
+                        } else {
+                            if (typeof(obj[nodeName].push) == "undefined") {
+                                var old = obj[nodeName];
+                                obj[nodeName] = [];
+                                obj[nodeName].push(old);
+                            }
+                            obj[nodeName].push(xmlToJson(item));
+                        }
+                    }
+                }
+                return obj;
+            };
+        });
+    </script>
+</div>
+<div>
+    <button id="1">1. Get Countries</button>
+    <button id="2">2. Info Domains</button>
+    <button id="3">3. Create Order</button>
+    <button id="4">4. Link</button>
+    <button id="5">5. Get Terms</button>
+    <button id="6">6. Get_Plans Products</button>
+    <button id="7">7. Get_Domains Products</button>
+    <button id="8">8. Get_RegisterDomains Products</button>
+    <button id="9">9. Check Domains</button>
+    <button id="10">10. Get_Upgrades Products</button>
+    <button id="11">11. Get_Services Products</button>
+    <button id="12">12. Get_ID_Protect Products</button>
+    <button id="13">13. Get_Company Sotre_Data</button>
+    <button id="14">14. Username_Free Validate</button>
+    <button id="15-1">15-1. Latest</button>
+    <button id="15-3">15-3. Latest</button>
+    <button id="15-6">15-6. Latest</button>
+    <button id="15-12">15-12. Latest</button>
+</div>
+<div>
+    <p id="text">
+        
+    </p>
+</div>
+</body>
+</html>
