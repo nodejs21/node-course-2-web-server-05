@@ -81,40 +81,10 @@ app.get('/bad', (req, res) => {
     });
 });
 
+app.get('/client1', (req, res) => {
+    res.render('dvgsolucoes.hbs');
+});
+
 app.listen(port, () => {
     console.log(`Server is up on port ${port}`);
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//
